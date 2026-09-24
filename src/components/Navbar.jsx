@@ -44,6 +44,12 @@ const Navbar = ({ onConnectSales, onAdmin }) => {
             <li onClick={handleNavClick}>Migration <ChevronDown size={14} /></li>
             <li onClick={handleNavClick}>Integrations <ChevronDown size={14} /></li>
             <li onClick={handleNavClick}>Resources <ChevronDown size={14} /></li>
+            
+            {/* Mobile Actions inside menu */}
+            <li className="mobile-actions">
+              <button className="btn btn-outline" onClick={() => { handleNavClick(); onConnectSales(); }}>Request demo</button>
+              <button className="btn btn-primary" onClick={() => { handleNavClick(); onConnectSales(); }}>Start free</button>
+            </li>
           </ul>
 
           <div className="nav-actions">
@@ -51,6 +57,7 @@ const Navbar = ({ onConnectSales, onAdmin }) => {
             <button className="btn btn-primary" onClick={onConnectSales}>Start free</button>
           </div>
 
+          {/* Hamburger Icon */}
           <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
